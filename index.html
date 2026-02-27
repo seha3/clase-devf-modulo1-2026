@@ -1,16 +1,176 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Bienvenidxs a mi página web</h1>
-    <p>Esto es una prueba de un documento HTML.</p>
-    <h3>Subtítulo</h3>
-    <footer>
-        <p>Copyright &copy; 2024</p>
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starbucks México (Clone) - Estructura</title>
+
+    <!--
+      Referencia de colores (como guía):
+      - Verde Starbucks (brand): #006241 (Pantone 3425 C suele citarse en recursos de marca) :contentReference[oaicite:2]{index=2}
+      - Alternativa muy usada en paletas: #00704A :contentReference[oaicite:3]{index=3}
+      - Blanco: #FFFFFF | Negro: #000000 :contentReference[oaicite:4]{index=4}
+    -->
+  </head>
+
+  <body>
+    <!-- Accesibilidad -->
+    <a href="#main">Saltar al contenido</a>
+
+    <!-- HEADER / NAV -->
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- Logo -->
+        <a class="brand" href="/" aria-label="Starbucks México - Inicio">
+          <!-- Puedes reemplazar por SVG/IMG -->
+          <span class="brand-mark">Logotipo</span>
+        </a>
+
+        <!-- Nav principal -->
+        <nav class="primary-nav" aria-label="Navegación principal">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="#menu">Menu</a></li>
+            <li class="nav-item"><a href="https://rewards.starbucks.mx/">Rewards</a></li>
+          </ul>
+        </nav>
+
+        <!-- Acciones (lado derecho) -->
+        <div class="header-actions" aria-label="Acciones de usuario">
+          <a href="#store-locator">Localizar Tienda</a>
+          <a href="https://rewards.starbucks.mx/">Ingresar</a>
+          <a href="https://rewards.starbucks.mx/">Únete</a>
+        </div>
+
+        <!-- Botón menú móvil (si lo quieres implementar después) -->
+        <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+          <span>☰</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main id="main" class="site-main">
+      <!-- SECCIÓN 1: Promo/Hero -->
+      <section class="promo promo-hero" aria-labelledby="promo-hero-title">
+        <div class="promo-content">
+          <h2 id="promo-hero-title">¿Nuevas vibes?</h2>
+          <p>Primero tu Starbucks para comenzar este 2026 con tu nuevo mood.</p>
+          <a class="promo-cta" href="#">Descubre más</a>
+        </div>
+
+        <!-- Imagen del hero (placeholder) -->
+        <figure class="promo-media">
+          <img src="https://via.placeholder.com/1200x700" alt="Imagen promocional principal" />
+        </figure>
+      </section>
+
+      <!-- SECCIÓN 2: Promo producto -->
+      <section class="promo promo-product" aria-labelledby="promo-product-title">
+        <div class="promo-content">
+          <h2 id="promo-product-title">Strato Frappuccino®</h2>
+          <p>Tu próximo Fav</p>
+          <p>
+            Primero tu Starbucks con Fresa Matcha Strato Frappuccino®, Brown Sugar Strato Frappuccino®,
+            Salted Caramel Mocha Strato Frappuccino®.
+          </p>
+          <a class="promo-cta" href="#">Descubre más</a>
+        </div>
+
+        <figure class="promo-media">
+          <img src="https://via.placeholder.com/1200x700" alt="Imagen de bebidas Strato Frappuccino" />
+        </figure>
+      </section>
+
+      <!-- SECCIÓN 3: Rewards -->
+      <section class="promo promo-rewards" aria-labelledby="promo-rewards-title">
+        <div class="promo-content">
+          <h2 id="promo-rewards-title">Recompensas todo el año</h2>
+          <p>
+            Sé parte de las recompensas que te da tu bebida favorita. Obtén más café gratis, promociones exclusivas,
+            accesos a productos antes que nadie y más.
+          </p>
+          <a class="promo-cta" href="https://rewards.starbucks.mx/">Conoce Rewards</a>
+        </div>
+
+        <figure class="promo-media">
+          <img src="https://via.placeholder.com/1200x700" alt="Imagen del programa Starbucks Rewards" />
+        </figure>
+      </section>
+
+      <!-- SECCIÓN 4: Sustentabilidad / vasos -->
+      <section class="promo promo-cups" aria-labelledby="promo-cups-title">
+        <div class="promo-content">
+          <h2 id="promo-cups-title">¡Tus vasos y termos son bienvenidos!</h2>
+          <p>
+            Cada vez que eliges llevar tu vaso o termo para tomar tus bebidas obtienes $8 de descuento y ayudas a cuidar
+            el planeta.
+          </p>
+        </div>
+
+        <figure class="promo-media">
+          <img src="https://via.placeholder.com/1200x700" alt="Imagen de vasos y termos reutilizables" />
+        </figure>
+      </section>
+
+      <!-- SECCIÓN 5: Eventos + T&C (bloque simple) -->
+      <section class="info-strip" aria-label="Información adicional">
+        <p>Consulta los eventos más recientes.</p>
+        <p><a href="#">Aquí</a></p>
+
+        <p>Términos y condiciones.</p>
+        <p><a href="#">Ver más</a></p>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <!-- Columnas -->
+        <section class="footer-col" aria-label="Sobre Nosotros">
+          <h3>Sobre Nosotros</h3>
+          <ul>
+            <li><a href="/seccion/trabaja-con-nosotros">Trabaja con nosotros</a></li>
+            <li><a href="https://historias.starbucks.com/">Historias Starbucks</a></li>
+          </ul>
+        </section>
+
+        <section class="footer-col" aria-label="Atención al cliente">
+          <h3>Atención al cliente</h3>
+          <ul>
+            <li><a href="https://rewards.starbucks.mx/">Contáctanos</a></li>
+            <li><a href="https://alsea.interfactura.com/">Facturas Electrónicas</a></li>
+            <li><a href="/seccion/experiencia-starbucks">Formas de comprar</a></li>
+          </ul>
+        </section>
+
+        <!-- Redes -->
+        <section class="footer-col" aria-label="Redes sociales">
+          <h3>Redes</h3>
+          <ul>
+            <li><a href="https://www.facebook.com/">Facebook</a></li>
+            <li><a href="https://www.instagram.com/">Instagram</a></li>
+            <li><a href="https://twitter.com/">Twitter</a></li>
+            <li><a href="https://www.youtube.com/">Youtube</a></li>
+          </ul>
+        </section>
+
+        <!-- Links legales -->
+        <section class="footer-col" aria-label="Legal">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="#">Accesibilidad Web</a></li>
+            <li><a href="#">Aviso de Privacidad</a></li>
+            <li><a href="#">Boletines</a></li>
+            <li><a href="#">Condiciones de uso</a></li>
+            <li><a href="#">Mapa del sitio</a></li>
+            <li><a href="#">Preferencias sobre cookies</a></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="footer-bottom">
+        <small>© 2026. Starbucks Coffee Company. Reservados todos los derechos.</small>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
